@@ -113,19 +113,36 @@
         {
             i++;
         }
-        Console.WriteLine("Cantidad de clientes inscriptos: " + i);
+        if (i == 0)
+        {
+            Console.WriteLine("Aún no se anotó nadie");
+        }
+        else
+        {
+            Console.WriteLine("Cantidad de clientes inscriptos: " + i);
+
+        }
         // Porcentajes
         int cantTotal = CantidadEntradas[0] + CantidadEntradas[1] + CantidadEntradas[2] + CantidadEntradas[3];
         Console.WriteLine("Porcentaje de entradas del día uno respecto al total" + (CantidadEntradas[0] * cantTotal) / 100);
         Console.WriteLine("Porcentaje de entradas del día dos respecto al total" + (CantidadEntradas[1] * cantTotal) / 100);
         Console.WriteLine("Porcentaje de entradas del día tres respecto al total" + (CantidadEntradas[2] * cantTotal) / 100);
         Console.WriteLine("Porcentaje de entradas del full pass respecto al total" + (CantidadEntradas[3] * cantTotal) / 100);
-    Console.WriteLine("Recaudación del día 1: " + RecaudacionPorDia[0]);
-    Console.WriteLine("Recaudación del día 2: " + RecaudacionPorDia[1]);
-    Console.WriteLine("Recaudación del día 3: " + RecaudacionPorDia[2]);
-    double recaudacionTotal = RecaudacionPorDia[0] + RecaudacionPorDia[1] + RecaudacionPorDia[2];
-    Console.WriteLine("Recaudación total: " + recaudacionTotal);
+        Console.WriteLine("Recaudación del día 1: " + RecaudacionPorDia[0]);
+        Console.WriteLine("Recaudación del día 2: " + RecaudacionPorDia[1]);
+        Console.WriteLine("Recaudación del día 3: " + RecaudacionPorDia[2]);
+        double recaudacionTotal = RecaudacionPorDia[0] + RecaudacionPorDia[1] + RecaudacionPorDia[2];
+        Console.WriteLine("Recaudación total: " + recaudacionTotal);
     }
+    static void BuscarCliente(Dictionary<int, string> ClientesRegistrados){
+         int DNI = IngresarEntero("Ingrese el DNI del cliente: ");
+            if(ClientesRegistrados.ContainsKey(DNI)){
+               
+            }else{
+                Console.WriteLine("El DNI proporcionado no existe");
+            }
+    }
+
     static int IngresarEntero(string msg)
     {
         Console.WriteLine(msg);
